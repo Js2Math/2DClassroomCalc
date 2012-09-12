@@ -1,0 +1,18 @@
+
+body {
+    background: url(../images/bg01.png) repeat-x;
+    
+}
+
+div#equInput{
+	padding-top:100px;
+	text-align:center;
+}
+div#equInput > div {
+	float: left;
+}
+span#rstVal {
+	font-family:"Arial Black";
+	font-size: 2.2em;
+	display: none;
+}

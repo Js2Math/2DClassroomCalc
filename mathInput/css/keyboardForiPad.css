@@ -1,0 +1,309 @@
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+body {
+	font-family: "HelveticaNeue", arial, helvetica sans-serif;
+	font-size: 0.875em;
+}
+#mathInputKeyboard {
+	background: url('../images/bg_keyboard.png') repeat;
+	height: 280px;
+	
+	position: absolute;
+	bottom: 0px;
+	left: 0;
+	width: 100%;
+	display: none;
+	z-index: 1000;
+}
+@media screen and (min-width: 1020px) {
+	#mathInputKeyboard {
+		height: 300px;
+	}
+}
+@media screen and (max-width: 480px) {
+	#mathInputKeyboard {
+		height: 265px;
+	}
+}
+ul {
+	list-style-type: none;
+	clear: both;
+	margin: 0 auto;
+	display: block;
+}
+li {
+	list-style: none;
+	float: left;
+	width: 7.142857143%;
+}
+#mi_bar li:last-child{
+	float: right;
+}
+img {
+	max-width: 100%;
+}
+a {
+	text-decoration: none;
+	color: #000;
+}
+.mi_key {
+	display: block;
+	color: #aaa;
+	font: bold 9pt arial;
+	text-decoration: none;
+	text-align: center;
+	height: 41px;
+	margin: 5%;
+	background: #222;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	border-top: 1px solid #666;
+	text-shadow: 0px -1px 0px #000;
+}
+.mi_key:active, .keydown {
+	color: #888;
+	background: #222;
+	margin: 7px 5px 0px;
+	border-top: 1px solid #000;
+}
+@media screen and (max-width: 600px) {
+	.mi_key:active, .keydown {
+		margin: 3px 2px 0px;
+	}
+}
+.fn {
+	height: 26px;
+}
+.fn.tool span {
+	display: block;
+	margin: 14px 5px 5px 0;
+	text-align: right;
+}
+#p1R5 a {
+	height: 49px;
+}
+.space {
+	width: 35.714285715%;
+}
+.space .mi_key {
+
+	margin: 1%;
+}
+#r2L1 a {
+}
+#backSpaceKey a, #insert a, #shift a {
+}
+#backSpaceKey span, #insert span, #shift span {
+	display: block;
+	text-align: right;
+	margin: 23px 10px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;
+}
+#return a {
+}
+#return span {
+	display: block;
+	text-align: right;
+	margin: 31px 10px 0 0;
+	font-size: 7.5pt;
+	text-transform: lowercase;
+}
+/* the position of key char*/
+.mi_key span {
+	display: block;
+	margin: 12px 0 0 0;
+}
+.mi_key span.mfrac1, .mi_key span.mfrac2, .mi_key span.pPlus, .mi_key span.pMinus, .mi_key span.pMulti {
+	margin: 4px 0 0 0;
+}
+.mi_key span.pDiv {
+	margin: 5px 0 0 0;
+}
+.mi_key span.pFracPlus, .mi_key span.pFracMinus, .mi_key span.pFracMulti, .mi_key span.pFracDiv {
+	margin: 9px 0 0 0;
+}
+.mi_key span.pFracRdc {
+	margin: 9px 0 0 0;
+}
+.mi_key span.equ2, .mi_key span.equ3 {
+	margin: 6px 0 0 0;
+}
+.mi_key span.sum, .mi_key span.prod {
+	margin: 7px 0 0 0;
+}
+.mi_key span.log2, .mi_key span.sp_log1, .mi_key span.sp_ln, .mi_key span.arrangement, .mi_key span.combination {
+	margin: 15px 0 0 0;
+}
+/* the position of key char*/
+
+.in, .out {
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-animation-duration: 300ms;
+}
+@-webkit-keyframes fade-in {
+from {
+	opacity: 0;
+}
+to {
+	opacity: 1;
+}
+}
+.fade.in {
+	-webkit-animation-name: fade-in;
+	z-index: 10;
+}
+.fade.out {
+	z-index: 0;
+}
+.show.in {
+	z-index: 10;
+	-webkit-animation-name: fade-in;
+	-webkit-animation-duration: 10ms;
+}
+.show.out {
+	z-index: 0;
+}
+/* Slid in/out */
+@-webkit-keyframes inFromBottom {
+from {
+	-webkit-transform: translateY(100%);
+}
+to {
+	-webkit-transform: translateY(0);
+}
+}
+.slid.in {
+	-webkit-transform: translateY(0);
+	-o-transform: translateX(0);
+	-webkit-animation-name: inFromBottom;
+}
+@-webkit-keyframes outToBottom {
+from {
+	-webkit-transform: translateY(0);
+}
+to {
+	-webkit-transform: translateY(100%);
+}
+}
+.slid.in.reverse {
+	-webkit-transform: translateX(100%);
+	-o-transform: translateX(100%);
+	-webkit-animation-name: outToBottom;
+}
+/* Push in/out */
+@-webkit-keyframes inFromRight {
+from {
+	-webkit-transform: translateX(100%);
+}
+to {
+	-webkit-transform: translateX(0);
+}
+}
+.push.in {
+	-webkit-transform: translateX(0);
+	-o-transform: translateX(0);
+	-webkit-animation-name: inFromRight;
+}
+@-webkit-keyframes outToLeft {
+from {
+	-webkit-transform: translateX(0);
+}
+to {
+	-webkit-transform: translateX(-100%);
+}
+}
+.push.out {
+	-webkit-transform: translateX(-100%);
+	-o-transform: translateX(-100%);
+	-webkit-animation-name: outToLeft;
+}
+@-webkit-keyframes inFromLeft {
+from {
+	-webkit-transform: translateX(-100%);
+}
+to {
+	-webkit-transform: translateX(0);
+}
+}
+.push.in.reverse {
+	-o-transform: translateX(0);
+	-webkit-animation-name: inFromLeft;
+}
+@-webkit-keyframes outToRight {
+from {
+	-webkit-transform: translateX(0);
+}
+to {
+	-webkit-transform: translateX(100%);
+}
+}
+.push.out.reverse {
+	-o-transform: translateX(100%);
+	-webkit-animation-name: outToRight;
+}
+.flip {
+	-webkit-animation-duration: .65s;
+	-webkit-backface-visibility: hidden;
+}
+.flip.in {
+	-webkit-animation-name: flipinfromleft;
+}
+.flip.out {
+	opacity: 0;
+	-webkit-animation-name: flipouttoleft;
+}
+.flip.in.reverse {
+	-webkit-animation-name: flipinfromright;
+}
+.flip.out.reverse {
+	opacity: 0;
+	-webkit-animation-name: flipouttoright;
+}
+@-webkit-keyframes flipinfromright {
+from {
+	-webkit-transform: rotateY(-180deg) scale(0.8);
+}
+to {
+	-webkit-transform: rotateY(0) scale(1);
+}
+}
+@-webkit-keyframes
+flipinfromleft {from {
+	-webkit-transform: rotateY(180deg) scale(0.8);
+}
+to {
+	-webkit-transform: rotateY(0) scale(1);
+}
+}
+@-webkit-keyframes
+flipouttoleft {from {
+	-webkit-transform: rotateY(0) scale(1);
+	opacity: 1;
+}
+to {
+	-webkit-transform: rotateY(-180deg) scale(.8);
+	opacity: 1;
+}
+}
+@-webkit-keyframes
+flipouttoright {from {
+	-webkit-transform: rotateY(0) scale(1);
+	opacity: 1;
+}
+to {
+	-webkit-transform: rotateY(180deg) scale(.8);
+	opacity: 1;
+}
+}
